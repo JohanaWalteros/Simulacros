@@ -1,15 +1,57 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import controllers.AirplaneController;
+import database.ConfigDB;
+
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        int option = 0, option2 = 0;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        do{
+            option = Integer.parseInt(JOptionPane.showInputDialog("""                    
+                    1. Gestionar Aviónes
+                    2. Gestionar Vuelos
+                    3. Gestionar Pasajeros
+                    4. Gestionar Reservas
+                    5. Salir del menú
+                    
+                    Ingrese una opción   
+                    """));
+            switch (option){
+                case 1:
+                    do{
+                        option2 = Integer.parseInt(JOptionPane.showInputDialog("""
+                                1. Listar Aviónes
+                                2. Crear Avión
+                                3. Eliminar Avión
+                                4. Actualizar Avión
+                                5. Salir del Menú
+                               
+                                Ingrese una opción 
+                                """));
+                        switch (option2){
+                            case 1:
+                                AirplaneController.getAll();
+                                break;
+                            case 2:
+                                AirplaneController.insert();
+                                break;
+                            case 3:
+                                AirplaneController.delete();
+                                break;
+                            case 4:
+                                AirplaneController.update();
+                                break;
+                        }
+                    }while(option2!=5);
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }
+        }while(option!=5);
     }
 }

@@ -43,11 +43,10 @@ public class Specialty {
     //4. To string
     @Override
     public String toString() {
-        return "Specialty{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+        return "Especialidad: " +
+                "- id: " + id + "\n"+
+                "- Nombre: " + name + "\n" +
+                "- Descripción: " + description;
     }
 
     //5. CREAR EL CRUD EN DATABASE
