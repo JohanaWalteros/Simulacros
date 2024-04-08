@@ -103,19 +103,7 @@ public class MedicController {
         instanceModel().update(new Medic(name, lastName, objSpecialty.getId(),objSpecialty));
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-    //4. Instanciar MedicModel
+   //4. Instanciar MedicModel
     public static MedicModel instanceModel(){
         return new MedicModel();
     }
